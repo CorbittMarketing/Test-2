@@ -21,7 +21,7 @@
         .page-header h1 { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
         .page-header p { color: #778da9; font-size: 1.25rem; max-width: 600px; margin: 0 auto; }
         
-        .section-label { color: #e63946; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; }
+        .section-label { color: #e63946; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; display: block; }
         
         .service-detail { padding: 5rem 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto; align-items: center; }
         .service-detail:nth-child(even) { direction: rtl; }
@@ -36,46 +36,65 @@
         .service-image-box::after { content: attr(data-number); position: absolute; top: 2rem; left: 2rem; font-size: 6rem; font-weight: 800; color: rgba(255,255,255,0.3); }
         
         .features-list { list-style: none; margin-top: 2rem; }
-        .features-list li { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: #1a1a1a; font-weight: 500; }
-        .features-list li::before { content: '✓'; width: 24px; height: 24px; background: #e63946; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; }
+        .features-list li { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; color: #1a1a1a; font-weight: 500; }
+        .features-list li::before { content: '✓'; width: 24px; height: 24px; background: #e63946; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; margin-top: 2px; }
         
-        .btn-primary { background: #e63946; color: #fff; padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: #e63946; color: #fff; padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s; }
         .btn-primary:hover { background: #c1121f; }
         
-        /* Pricing Section */
         .pricing { padding: 5rem 5%; background: #f8f9fa; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 3rem auto 0; }
-        .pricing-card { background: #fff; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: relative; border-top: 4px solid #e63946; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem; }
+        .section-header p { color: #6c757d; }
+        
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 3rem auto 0; }
+        .pricing-card { background: #fff; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-top: 4px solid #e63946; }
         .pricing-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #1a1a1a; }
         .pricing-card .price { font-size: 2.5rem; font-weight: 800; color: #e63946; margin-bottom: 0.5rem; }
         .pricing-card .price-note { color: #6c757d; font-size: 0.9rem; margin-bottom: 1.5rem; }
         .pricing-card ul { list-style: none; margin-bottom: 1.5rem; }
-        .pricing-card ul li { padding: 0.5rem 0; border-bottom: 1px solid #e9ecef; color: #495057; }
+        .pricing-card ul li { padding: 0.75rem 0; border-bottom: 1px solid #e9ecef; color: #495057; font-size: 0.95rem; }
         .pricing-card ul li:last-child { border-bottom: none; }
         .pricing-card .warranty-badge { background: #d4edda; color: #155724; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 1rem; }
-        .pricing-note { text-align: center; margin-top: 3rem; color: #6c757d; font-style: italic; }
         
-        .toto-section { background: #fff; padding: 3rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid #7cb342; }
-        .toto-section h4 { color: #2d5016; margin-bottom: 1rem; }
-        .toto-section a { color: #e63946; }
+        .pricing-note { text-align: center; margin-top: 3rem; padding: 2rem; background: #fff; border-radius: 8px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .pricing-note strong { color: #1a1a1a; display: block; margin-bottom: 0.5rem; }
+        .pricing-note a { color: #e63946; text-decoration: none; font-weight: 600; }
         
-        .payment-methods { padding: 3rem 5%; background: #fff; text-align: center; }
-        .payment-icons { display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
-        .payment-icon { background: #f8f9fa; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; color: #495057; }
+        .toto-section { max-width: 1200px; margin: 3rem auto 0; background: #fff; padding: 2rem; border-radius: 8px; border-left: 4px solid #7cb342; }
+        .toto-section h4 { color: #2d5016; margin-bottom: 1rem; font-size: 1.25rem; }
+        .toto-section p { color: #6c757d; margin-bottom: 0.75rem; }
+        .toto-section strong { color: #1a1a1a; }
+        .toto-section a { color: #e63946; text-decoration: none; }
+        .toto-section a:hover { text-decoration: underline; }
+        
+        .payment-methods { padding: 4rem 5%; background: #fff; text-align: center; }
+        .payment-methods h2 { font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
+        .payment-methods > p { color: #6c757d; margin-bottom: 2rem; }
+        .payment-icons { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .payment-icon { background: #f8f9fa; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: 500; color: #495057; font-size: 0.9rem; }
+        
+        .availability { background: #fff3cd; padding: 1.5rem; border-radius: 8px; max-width: 600px; margin: 0 auto; }
+        .availability strong { color: #856404; display: block; margin-bottom: 0.25rem; }
+        .availability p { color: #856404; margin: 0; }
         
         .cta-section { padding: 5rem 5%; background: #e63946; text-align: center; color: #fff; }
         .cta-section h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
-        .btn-white { background: #fff; color: #e63946; padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; display: inline-block; }
+        .btn-white { background: #fff; color: #e63946; padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; display: inline-block; transition: transform 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); }
         
         footer { background: #0d1b2a; color: #fff; padding: 3rem 5%; text-align: center; }
         footer p { color: #778da9; font-size: 0.9rem; }
-        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
         .footer-links a { color: #fff; text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { color: #e63946; }
         
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .service-detail { grid-template-columns: 1fr; }
+            .service-detail { grid-template-columns: 1fr; gap: 2rem; }
             .service-detail:nth-child(even) { direction: ltr; }
+            .service-image-box { height: 250px; }
+            .pricing-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -100,7 +119,7 @@
 
     <section class="service-detail" id="sewer">
         <div>
-            <p class="section-label">01 / SEWER & DRAIN</p>
+            <span class="section-label">01 / SEWER & DRAIN</span>
             <h2>Trenchless Sewer Line Repair</h2>
             <p>Is your sewer or drain line broken or in poor condition? We can fix damaged sewer or drain lines without destroying your yard.</p>
             <ul class="features-list">
@@ -117,7 +136,7 @@
 
     <section class="service-detail" id="water">
         <div>
-            <p class="section-label">02 / WATER HEATING</p>
+            <span class="section-label">02 / WATER HEATING</span>
             <h2>Water Heater Supply & Install</h2>
             <p>We supply, install & remove your old hot water heater! A red-seal journeyman (licensed) plumber / gas fitter at every job.</p>
             <ul class="features-list">
@@ -134,7 +153,7 @@
 
     <section class="service-detail" id="hvac">
         <div>
-            <p class="section-label">03 / HVAC</p>
+            <span class="section-label">03 / HVAC</span>
             <h2>Heating, Cooling & Air Quality</h2>
             <p>Complete HVAC solutions with our own master electrician. Professional installation and service for all major brands.</p>
             <ul class="features-list">
@@ -151,7 +170,7 @@
 
     <section class="service-detail" id="plumbing">
         <div>
-            <p class="section-label">04 / PLUMBING</p>
+            <span class="section-label">04 / PLUMBING</span>
             <h2>Plumbing, Gas & Fixtures</h2>
             <p>Full-service plumbing with quality fixtures and expert installation. We stand behind our work.</p>
             <ul class="features-list">
@@ -167,10 +186,10 @@
     </section>
 
     <section class="pricing" id="pricing">
-        <div class="section-header" style="text-align: center;">
-            <p class="section-label">[TRANSPARENT PRICING]</p>
-            <h2 style="font-size: 2rem; font-weight: 700; color: #1a1a1a;">Upfront Pricing — No Surprises</h2>
-            <p style="color: #6c757d; margin-top: 1rem;">Note: Prices may change. Call for current pricing.</p>
+        <div class="section-header">
+            <span class="section-label">[TRANSPARENT PRICING]</span>
+            <h2>Upfront Pricing — No Surprises</h2>
+            <p>Note: Prices may change. Call for current pricing.</p>
         </div>
         
         <div class="pricing-grid">
@@ -232,8 +251,8 @@
         </div>
         
         <div class="pricing-note">
-            <strong>All 40 & 50 gallon atmospheric tanks include a 3 YEAR LABOUR & 6 YEAR PARTS WARRANTY!</strong><br>
-            <a href="tips.html" style="color: #e63946;">See hot water tank inspection & furnace tips →</a>
+            <strong>All 40 & 50 gallon atmospheric tanks include a 3 YEAR LABOUR & 6 YEAR PARTS WARRANTY!</strong>
+            <a href="tips.html">See hot water tank inspection & furnace tips →</a>
         </div>
         
         <div class="toto-section">
@@ -245,8 +264,9 @@
     </section>
 
     <section class="payment-methods">
-        <p class="section-label">[PAYMENT OPTIONS]</p>
-        <h2 style="font-size: 1.5rem; font-weight: 700; color: #1a1a1a;">Payment Methods Accepted</h2>
+        <span class="section-label">[PAYMENT OPTIONS]</span>
+        <h2>Payment Methods Accepted</h2>
+        <p>Flexible payment options for your convenience</p>
         <div class="payment-icons">
             <div class="payment-icon">💳 Mastercard</div>
             <div class="payment-icon">💳 Visa</div>
@@ -255,7 +275,10 @@
             <div class="payment-icon">📧 Interac E-Transfer</div>
             <div class="payment-icon">💳 Debit</div>
         </div>
-        <p style="margin-top: 2rem; color: #6c757d;"><strong>Weekend & holiday services also available (most days)!</strong><br>Give us a call anytime!</p>
+        <div class="availability">
+            <strong>Weekend & Holiday Services Available</strong>
+            <p>Give us a call anytime! Most days we're available.</p>
+        </div>
     </section>
 
     <section class="cta-section">
