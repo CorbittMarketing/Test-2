@@ -21,31 +21,35 @@
         .page-header h1 { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
         .page-header p { color: #778da9; font-size: 1.25rem; max-width: 600px; margin: 0 auto; }
         
-        .section-label { color: #e63946; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; }
+        .section-label { color: #e63946; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; display: block; }
         
         .tips-section { padding: 5rem 5%; background: #f8f9fa; }
-        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
         .tip-card { background: #fff; border-radius: 8px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 4px solid #e63946; }
-        .tip-card h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #1a1a1a; display: flex; align-items: center; gap: 0.75rem; }
-        .tip-card h2 span { font-size: 1.75rem; }
-        .tip-card h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #495057; }
-        .tip-card ul { margin-left: 1.5rem; color: #6c757d; }
+        .tip-card h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: #1a1a1a; display: flex; align-items: center; gap: 0.75rem; }
+        .tip-card h2 span { font-size: 1.5rem; }
+        .tip-card h3 { font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #495057; }
+        .tip-card ul { margin-left: 1.25rem; color: #6c757d; }
         .tip-card ul li { margin-bottom: 0.5rem; }
-        .tip-card .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin-top: 1rem; border-radius: 4px; color: #856404; }
-        .tip-card .info { background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 1rem; margin-top: 1rem; border-radius: 4px; color: #0c5460; }
+        .tip-card .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin-top: 1rem; border-radius: 4px; color: #856404; font-size: 0.95rem; }
+        .tip-card .info { background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 1rem; margin-top: 1rem; border-radius: 4px; color: #0c5460; font-size: 0.95rem; }
         
         .video-section { padding: 5rem 5%; background: #fff; text-align: center; }
-        .video-container { max-width: 800px; margin: 2rem auto 0; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+        .video-section h2 { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
+        .video-section > p { color: #6c757d; margin-bottom: 2rem; }
+        .video-container { max-width: 800px; margin: 0 auto; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         
         .cta-section { padding: 5rem 5%; background: #e63946; text-align: center; color: #fff; }
         .cta-section h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
-        .btn-white { background: #fff; color: #e63946; padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; display: inline-block; }
+        .btn-white { background: #fff; color: #e63946; padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; display: inline-block; transition: transform 0.3s; }
+        .btn-white:hover { transform: translateY(-2px); }
         
         footer { background: #0d1b2a; color: #fff; padding: 3rem 5%; text-align: center; }
         footer p { color: #778da9; font-size: 0.9rem; }
-        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
         .footer-links a { color: #fff; text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { color: #e63946; }
         
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -67,7 +71,7 @@
     </nav>
 
     <header class="page-header">
-        <p class="section-label">[HELPFUL INFO]</p>
+        <span class="section-label">[HELPFUL INFO]</span>
         <h1>Plumbing & HVAC Tips</h1>
         <p>Expert advice to keep your systems running smoothly and avoid costly repairs.</p>
     </header>
@@ -75,120 +79,107 @@
     <section class="tips-section">
         <div class="tips-grid">
             <div class="tip-card">
-                <h2><span>🚿</span> Hot Water Tank Inspection Tips</h2>
+                <h2><span>🚿</span> Hot Water Tank Inspection</h2>
                 <h3>Annual Maintenance Checklist:</h3>
                 <ul>
-                    <li>Check for leaks around the tank base and connections</li>
-                    <li>Test the temperature-pressure relief (TPR) valve</li>
-                    <li>Drain and flush the tank to remove sediment buildup</li>
-                    <li>Inspect the anode rod every 2-3 years</li>
-                    <li>Check thermostat settings (recommended: 120°F)</li>
+                    <li>Check for leaks around tank base and connections</li>
+                    <li>Test temperature-pressure relief (TPR) valve</li>
+                    <li>Drain and flush tank to remove sediment</li>
+                    <li>Inspect anode rod every 2-3 years</li>
+                    <li>Check thermostat settings (120°F recommended)</li>
                 </ul>
                 <div class="warning">
-                    <strong>⚠️ Warning:</strong> If you notice rust-colored water or rumbling noises, call a professional immediately. These are signs of tank failure.
+                    <strong>⚠️ Warning:</strong> Rust-colored water or rumbling noises indicate tank failure. Call immediately.
                 </div>
             </div>
 
             <div class="tip-card">
-                <h2><span>🔥</span> Furnace Maintenance Tips</h2>
-                <h3>Before Winter Season:</h3>
+                <h2><span>🔥</span> Furnace Maintenance</h2>
+                <h3>Before Winter:</h3>
                 <ul>
-                    <li>Replace or clean furnace filters every 1-3 months</li>
-                    <li>Check and clean blower motor and fan blades</li>
-                    <li>Inspect ductwork for leaks or blockages</li>
+                    <li>Replace filters every 1-3 months</li>
+                    <li>Clean blower motor and fan blades</li>
+                    <li>Inspect ductwork for leaks</li>
                     <li>Test thermostat accuracy</li>
-                    <li>Schedule professional inspection annually</li>
-                </ul>
-                <h3>Signs You Need Service:</h3>
-                <ul>
-                    <li>Uneven heating throughout your home</li>
-                    <li>Unusual noises (banging, squealing, rattling)</li>
-                    <li>Higher than normal energy bills</li>
-                    <li>Frequent cycling on and off</li>
-                    <li>Yellow burner flame (should be blue)</li>
+                    <li>Schedule annual professional inspection</li>
                 </ul>
                 <div class="info">
-                    <strong>💡 Tip:</strong> Annual furnace maintenance can reduce energy costs by up to 30% and extend equipment life.
+                    <strong>💡 Tip:</strong> Annual maintenance reduces energy costs by up to 30%.
                 </div>
             </div>
 
             <div class="tip-card">
-                <h2><span>🚽</span> Toilet Maintenance</h2>
-                <h3>Why We Recommend TOTO:</h3>
+                <h2><span>🚽</span> Toilet Care</h2>
+                <h3>Why TOTO:</h3>
                 <ul>
                     <li>Most reliable toilet on the market</li>
-                    <li>Replacement parts are cheaper than other high-end brands</li>
+                    <li>Cheaper replacement parts</li>
                     <li>Parts last longer than competitors</li>
-                    <li>Better flush technology = fewer clogs</li>
-                    <li>Water-efficient models available</li>
+                    <li>Better flush technology</li>
                 </ul>
-                <h3>Common Toilet Issues:</h3>
+                <h3>Common Issues:</h3>
                 <ul>
-                    <li>Running toilet — usually a flapper issue</li>
-                    <li>Weak flush — may need bowl cleaning or water level adjustment</li>
-                    <li>Leaking base — wax ring may need replacement</li>
+                    <li>Running toilet — usually flapper</li>
+                    <li>Weak flush — clean bowl or adjust water level</li>
+                    <li>Leaking base — wax ring replacement</li>
                 </ul>
             </div>
 
             <div class="tip-card">
-                <h2><span>💧</span> Drain Care & Prevention</h2>
-                <h3>Do's:</h3>
+                <h2><span>💧</span> Drain Care</h2>
+                <h3>Do:</h3>
                 <ul>
-                    <li>Use drain strainers to catch hair and debris</li>
-                    <li>Run hot water after using the sink</li>
-                    <li>Clean pop-up stoppers regularly</li>
-                    <li>Schedule annual professional drain cleaning</li>
+                    <li>Use drain strainers</li>
+                    <li>Run hot water after use</li>
+                    <li>Schedule annual professional cleaning</li>
                 </ul>
-                <h3>Don'ts:</h3>
+                <h3>Don't:</h3>
                 <ul>
-                    <li>Never pour grease or oil down drains</li>
-                    <li>Avoid chemical drain cleaners (damage pipes)</li>
-                    <li>Don't flush wipes, paper towels, or feminine products</li>
-                    <li>Don't ignore slow drains — they get worse</li>
+                    <li>Pour grease down drains</li>
+                    <li>Use chemical drain cleaners</li>
+                    <li>Flush wipes or paper towels</li>
                 </ul>
                 <div class="info">
-                    <strong>💡 Did You Know?</strong> We offer trenchless sewer repair that requires ZERO digging — saving your yard and your wallet!
+                    <strong>💡 Trenchless Repair:</strong> We fix sewer lines with ZERO digging.
                 </div>
             </div>
 
             <div class="tip-card">
-                <h2><span>❄️</span> Air Conditioner Tips</h2>
-                <h3>Pre-Season Checklist:</h3>
+                <h2><span>❄️</span> Air Conditioner</h2>
+                <h3>Pre-Season:</h3>
                 <ul>
-                    <li>Clean or replace air filters</li>
-                    <li>Clear debris from outdoor unit (2 feet clearance)</li>
-                    <li>Check refrigerant lines for damage</li>
-                    <li>Test system before hot weather hits</li>
-                    <li>Schedule professional tune-up</li>
+                    <li>Clean or replace filters</li>
+                    <li>Clear debris from outdoor unit</li>
+                    <li>Check refrigerant lines</li>
+                    <li>Test before hot weather</li>
                 </ul>
-                <h3>Energy Saving Tips:</h3>
+                <h3>Energy Saving:</h3>
                 <ul>
                     <li>Use programmable thermostats</li>
-                    <li>Keep blinds closed during peak sun hours</li>
-                    <li>Use ceiling fans to circulate cool air</li>
-                    <li>Seal windows and doors to prevent cool air escape</li>
+                    <li>Keep blinds closed during peak sun</li>
+                    <li>Use ceiling fans</li>
                 </ul>
             </div>
 
             <div class="tip-card">
-                <h2><span>🆘</span> Emergency Shut-Off Procedures</h2>
-                <h3>Know Where Your Shut-Offs Are:</h3>
+                <h2><span>🆘</span> Emergency Shut-Offs</h2>
+                <p style="color: #6c757d; margin-bottom: 1rem;"><strong>Know where these are:</strong></p>
                 <ul>
-                    <li><strong>Main Water Valve:</strong> Usually near front foundation wall or where main line enters house</li>
-                    <li><strong>Gas Shut-Off:</strong> Near gas meter — requires wrench to turn</li>
-                    <li><strong>Electrical Panel:</strong> Know which breaker controls your water heater and furnace</li>
+                    <li><strong>Main Water:</strong> Near front foundation wall</li>
+                    <li><strong>Gas:</strong> Near meter (requires wrench)</li>
+                    <li><strong>Electrical:</strong> Breaker panel location</li>
                 </ul>
                 <div class="warning">
-                    <strong>🚨 Emergency?</strong> If you smell gas, leave immediately and call 911. For water emergencies, shut off main valve and call us at 403-555-0123 — available 24/7!
+                    <strong>🚨 Smell gas?</strong> Leave immediately and call 911. Then call us 24/7: 403-555-0123
                 </div>
             </div>
         </div>
     </section>
 
     <section class="video-section">
-        <p class="section-label">[SEE OUR WORK]</p>
-        <h2 style="font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">Sewer Line Camera Inspection</h2>
-        <p style="color: #6c757d; margin-bottom: 2rem;">See how we diagnose problems without digging.</p>
+        <span class="section-label">[SEE OUR WORK]</span>
+        <h2>Sewer Line Camera Inspection</h2>
+        <p>See how we diagnose problems without digging.</p>
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/os_fY5Cmxzg" title="Sewer Line Camera Inspection" allowfullscreen></iframe>
         </div>
@@ -196,7 +187,7 @@
 
     <section class="cta-section">
         <h2>Still Have Questions?</h2>
-        <p>Our experts are here to help. Call anytime for advice or service.</p>
+        <p>Our experts are here to help. Call anytime.</p>
         <a href="contact.html" class="btn-white">Contact Us</a>
     </section>
 
